@@ -35,7 +35,7 @@ class ConversationViewController: UIViewController {
     let keyboardHeight = keyboardFrame.size.height
     
     UIView.animate(withDuration: 0.1, animations: { () -> Void in
-      self.liveConversationViewBottomConstraint.constant = keyboardHeight
+      self.liveConversationViewBottomConstraint.constant = keyboardHeight + 8
     })
     
   }
@@ -59,6 +59,7 @@ class ConversationViewController: UIViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
       cell.textLabel?.text = "hello"
+      cell.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
       return cell
     }
   }

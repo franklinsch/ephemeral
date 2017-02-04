@@ -20,6 +20,15 @@ class LiveConversationView: UITableView {
   
   private var timer: Timer?
   
+  // MARK: Setup
+  
+  override func draw(_ rect: CGRect) {
+    super.draw(rect)
+    
+    transform = CGAffineTransform(rotationAngle: -CGFloat(M_PI))
+    
+  }
+  
   // MARK: API functions
   
   func append(text: String) {
