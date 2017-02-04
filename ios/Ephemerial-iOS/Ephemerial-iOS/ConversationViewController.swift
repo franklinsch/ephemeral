@@ -23,6 +23,8 @@ class ConversationViewController: UIViewController {
     
     setUpKeyboardNotifications()
     setUpLiveTextView()
+    
+    liveConversationView.clear(after: 2)
   }
   
   private func setUpKeyboardNotifications() {
@@ -37,17 +39,19 @@ class ConversationViewController: UIViewController {
   // MARK: Keyboard notification handlers
   
   @objc private func keyboardWillShow(sender: NSNotification) {
-    
     let info = sender.userInfo!
     let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+    let keyboardHeight = keyboardFrame.size.height
     
     UIView.animate(withDuration: 0.1, animations: { () -> Void in
-      self.liveConversationViewBottomConstraint.constant = keyboardFrame.size.height
-      print(self.liveConversationViewBottomConstraint.constant)
+      self.liveConversationViewBottomConstraint.constant = keyboardHeight
     })
+    
   }
   
-  @objc private func keyboardWillHide(sender: NSNotification) {
-    liveConversationView.contentInset.bottom = 0
+  @objc private func keyboardWillHide(sender: NSNotification) {    
+    UIView.animate(withDuration: 0.1, animations: { () -> Void in
+      self.liveConversationViewBottomConstraint.constant = 0
+    })
   }
 }
