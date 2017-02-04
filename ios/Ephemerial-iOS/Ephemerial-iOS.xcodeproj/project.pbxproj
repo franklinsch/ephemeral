@@ -13,6 +13,7 @@
 		0E4A99721E465AC9003AEAB2 /* Ephemerial_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A99701E465AC9003AEAB2 /* Ephemerial_iOS.xcdatamodeld */; };
 		0E4A99741E465AC9003AEAB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A99731E465AC9003AEAB2 /* Assets.xcassets */; };
 		0E4A99771E465AC9003AEAB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A99751E465AC9003AEAB2 /* LaunchScreen.storyboard */; };
+		0E4A997F1E465B4A003AEAB2 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A997E1E465B4A003AEAB2 /* ConversationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0E4A99731E465AC9003AEAB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E4A99761E465AC9003AEAB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E4A99781E465AC9003AEAB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E4A997E1E465B4A003AEAB2 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0E4A99691E465AC9003AEAB2 /* AppDelegate.swift */,
 				0E4A996B1E465AC9003AEAB2 /* ViewController.swift */,
+				0E4A997E1E465B4A003AEAB2 /* ConversationViewController.swift */,
 				0E4A996D1E465AC9003AEAB2 /* Main.storyboard */,
 				0E4A99731E465AC9003AEAB2 /* Assets.xcassets */,
 				0E4A99751E465AC9003AEAB2 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				0E4A996C1E465AC9003AEAB2 /* ViewController.swift in Sources */,
 				0E4A99721E465AC9003AEAB2 /* Ephemerial_iOS.xcdatamodeld in Sources */,
 				0E4A996A1E465AC9003AEAB2 /* AppDelegate.swift in Sources */,
+				0E4A997F1E465B4A003AEAB2 /* ConversationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
