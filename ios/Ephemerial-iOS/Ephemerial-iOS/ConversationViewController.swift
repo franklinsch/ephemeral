@@ -1,4 +1,4 @@
-//
+  //
 //  ConversationView.swift
 //  Ephemerial-iOS
 //
@@ -12,8 +12,6 @@ class ConversationViewController: UIViewController {
   
   @IBOutlet weak var liveConversationView: LiveConversationView!
   
-  @IBOutlet weak var liveTextView: LiveTextView!
-  
   @IBOutlet weak var liveConversationViewBottomConstraint: NSLayoutConstraint!
   
   // MARK: Setup
@@ -22,18 +20,11 @@ class ConversationViewController: UIViewController {
     super.viewDidLoad()
     
     setUpKeyboardNotifications()
-    setUpLiveTextView()
-    
-    liveConversationView.clear(after: 2)
   }
   
   private func setUpKeyboardNotifications() {
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: .UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: .UIKeyboardWillHide, object: nil)
-  }
-  
-  private func setUpLiveTextView() {
-    liveConversationView.textView = liveTextView
   }
   
   // MARK: Keyboard notification handlers

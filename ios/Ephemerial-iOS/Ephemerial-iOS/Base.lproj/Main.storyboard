@@ -22,48 +22,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWT-dq-QdR" customClass="LiveConversationView" customModule="Ephemerial_iOS" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BV9-yU-QtF" customClass="LiveTextView" customModule="Ephemerial_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="647"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9n-xf-9m2">
-                                        <rect key="frame" x="8" y="609" width="326" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="BV9-yU-QtF" firstAttribute="top" secondItem="mWT-dq-QdR" secondAttribute="top" id="6Pt-fw-OCD"/>
-                                    <constraint firstItem="BV9-yU-QtF" firstAttribute="centerX" secondItem="mWT-dq-QdR" secondAttribute="centerX" id="Kln-Wh-Nwi"/>
-                                    <constraint firstAttribute="trailing" secondItem="j9n-xf-9m2" secondAttribute="trailing" constant="8" id="MXW-Zv-2k2"/>
-                                    <constraint firstAttribute="bottom" secondItem="j9n-xf-9m2" secondAttribute="bottom" constant="8" id="QYL-zR-Gh7"/>
-                                    <constraint firstItem="j9n-xf-9m2" firstAttribute="leading" secondItem="mWT-dq-QdR" secondAttribute="leading" constant="8" id="SQP-tV-h3u"/>
-                                    <constraint firstItem="BV9-yU-QtF" firstAttribute="leading" secondItem="mWT-dq-QdR" secondAttribute="leading" id="ToO-Wx-VDG"/>
-                                    <constraint firstAttribute="bottom" secondItem="BV9-yU-QtF" secondAttribute="bottom" id="k4b-Tg-WkB"/>
-                                    <constraint firstItem="BV9-yU-QtF" firstAttribute="centerY" secondItem="mWT-dq-QdR" secondAttribute="centerY" id="lwX-QO-NLw"/>
-                                    <constraint firstAttribute="trailing" secondItem="BV9-yU-QtF" secondAttribute="trailing" id="qgL-ul-ktQ"/>
-                                </constraints>
-                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dzv-x8-PhD">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XmK-u7-LeH" customClass="LiveConversationView" customModule="Ephemerial_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="343" height="589"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mWT-dq-QdR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0oZ-NR-vZa"/>
-                            <constraint firstItem="mWT-dq-QdR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HEE-kh-3DX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mWT-dq-QdR" secondAttribute="bottom" id="ouF-Ht-Nwr"/>
-                            <constraint firstItem="mWT-dq-QdR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="x5U-sQ-MDh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dzv-x8-PhD" secondAttribute="bottom" constant="20" id="12g-MA-Fo0"/>
+                            <constraint firstItem="XmK-u7-LeH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CU6-YJ-T0i"/>
+                            <constraint firstItem="XmK-u7-LeH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FV5-Z0-EUl"/>
+                            <constraint firstItem="Dzv-x8-PhD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Puk-Sg-yam"/>
+                            <constraint firstItem="Dzv-x8-PhD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QT7-tr-D4h"/>
+                            <constraint firstItem="XmK-u7-LeH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZTt-yZ-1Xa"/>
+                            <constraint firstItem="Dzv-x8-PhD" firstAttribute="top" secondItem="XmK-u7-LeH" secondAttribute="bottom" constant="8" id="eMj-Nb-4Wl"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="liveConversationView" destination="mWT-dq-QdR" id="yvj-tD-Jje"/>
-                        <outlet property="liveConversationViewBottomConstraint" destination="ouF-Ht-Nwr" id="CqC-pD-fti"/>
-                        <outlet property="liveTextView" destination="BV9-yU-QtF" id="bjy-Eg-vcy"/>
+                        <outlet property="liveConversationViewBottomConstraint" destination="12g-MA-Fo0" id="dz2-Ff-4G9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
