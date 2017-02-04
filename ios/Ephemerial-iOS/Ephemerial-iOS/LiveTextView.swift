@@ -14,7 +14,7 @@ class LiveConversationView: UITableView {
   
   var disappearDelay = 3.0 {
     didSet {
-      
+    
     }
   }
   
