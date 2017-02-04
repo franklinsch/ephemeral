@@ -10,4 +10,17 @@ import UIKit
 
 class LiveConversationView: UIScrollView {
   
+  // MARK: Properties
+  
+  var textView: UITextView!
+  
+  // MARK: API functions
+  
+  func clearText() {
+    textView.text = ""
+  }
+  
+  func append(text: String) {
+    textView.text = text
+  }
 }

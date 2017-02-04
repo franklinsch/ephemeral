@@ -22,11 +22,16 @@ class ConversationViewController: UIViewController {
     super.viewDidLoad()
     
     setUpKeyboardNotifications()
+    setUpLiveTextView()
   }
   
   private func setUpKeyboardNotifications() {
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: .UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: .UIKeyboardWillHide, object: nil)
+  }
+  
+  private func setUpLiveTextView() {
+    liveConversationView.textView = liveTextView
   }
   
   // MARK: Keyboard notification handlers
