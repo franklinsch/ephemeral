@@ -1,4 +1,5 @@
 import PerfectLib
+import PerfectWebSockets
 import PerfectHTTP
 import PerfectHTTPServer
 
@@ -7,6 +8,7 @@ let server = HTTPServer()
 
 // Register your own routes and handlers
 var routes = Routes()
+
 routes.add(method: .get, uri: "/", handler: {
         request, response in
         response.setHeader(.contentType, value: "text/html")
@@ -14,6 +16,20 @@ routes.add(method: .get, uri: "/", handler: {
         response.completed()
     }
 )
+
+routes.add(method: .get, uri: "/chat", handler: {
+  (request, response) in
+
+  WebSocketHandler(handlerProducer: {
+    (request: HTTPRequest, protocols: [String]) -> WebSocketSessionHandler? in
+    
+//    guard protocols.contains("chat") else {
+//      return nil
+//    }
+    
+    return ChatHandler()
+  }).handleRequest(request: request, response: response)
+})
 
 // Add the routes to the server.
 server.addRoutes(routes)
