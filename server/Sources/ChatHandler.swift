@@ -20,10 +20,26 @@ struct ChatHandler: WebSocketSessionHandler {
   public func handleSession(request req: HTTPRequest, socket: WebSocket) {
     socket.readStringMessage {
       (string, opCode, fin) in
-    
       guard let string = string else {
         socket.close()
         return
+      }
+      
+      let json = decodeJson(string)
+      let type = json[type]
+      switch type {
+        case 'chat-session-request' :
+          handleChatRequest(json)
+        case 'join-chat-sesion' :
+          handleJoinChatSession(json)
+        case 'send-message':
+          handleSendMessage(json)
+        case 'get-message':
+          handleSendMessage(json)
+        default:
+          socket.close()
+          return
+        
       }
       
       socket.sendStringMessage(string: string, final: true) {
@@ -33,6 +49,23 @@ struct ChatHandler: WebSocketSessionHandler {
       }
       
     }
+  }
+  
+  private func handleChatRequest(json: JSON) {
+    
+    guard sessionId = json.sessionId else {
+      sessionId = generateId
+    }
+    
+    guard let chatSession = chatSessions[SessionId]
+    
+    userIds = json.userIds
+    
+    for userId in usersIds {
+      requests[UserId].append((userId, requestMessage))
+    }
     
   }
+  
+
 }

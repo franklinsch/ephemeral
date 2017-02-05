@@ -22,11 +22,6 @@ routes.add(method: .get, uri: "/chat", handler: {
 
   WebSocketHandler(handlerProducer: {
     (request: HTTPRequest, protocols: [String]) -> WebSocketSessionHandler? in
-    
-//    guard protocols.contains("chat") else {
-//      return nil
-//    }
-    
     return ChatHandler()
   }).handleRequest(request: request, response: response)
 })
